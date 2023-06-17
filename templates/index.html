@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSP Universitas Gunadarma - Pertemuan 5</title>
+    <link rel="icon" href="https://drive.google.com/uc?export=view&id=1NTbuFalCHYhsf8c74vKK5wRTjICU8QG4"
+        type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">
+                <h2 class="card-heading">
+
+                </h2>
+            </div>
+            <p style="text-align:center;font-family: 'Monoton', cursive;font-size:29px; ">Iris Classification</p>
+            <form class="card-form" action="{{ url_for('home')}}" method="POST">
+                <div class="input">
+                    <input name="SepalLength" type="number" step="any" class="input-field" required />
+                    <label class="input-label"> Sepal Length in cm</label>
+                </div>
+                <div class="input">
+                    <input name="SepalWidth" type="number" step="any" class="input-field" required />
+                    <label class="input-label">Sepal Width in cm</label>
+                </div>
+                <div class="input">
+                    <input name="PetalLength" type="number" step="any" class="input-field" required />
+                    <label class="input-label">Petal Length in cm</label>
+                </div>
+                <div class="input">
+                    <input name="PetalWidth" type="number" step="any" class="input-field" required />
+                    <label class="input-label">Petal Width in cm</label>
+                </div>
+                <div class="action">
+                    <button type="submit" class="action-button">Submit</button>
+                </div>
+            </form>
+
+            <center>
+                <p style="color: darkred; font-weight: bold;">{{ prediction }}</p>
+                <img src="{{ image }}" alt="{{ prediction }}">
+            </center>
+        </div>
+    </div>
+
+</body>
+
+</html>
